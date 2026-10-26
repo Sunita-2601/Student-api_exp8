@@ -1,0 +1,153 @@
+{
+  "info": {
+    "_postman_id": "student-records-api-exp8",
+    "name": "Student Records API",
+    "description": "Experiment 8 - Postman collection for testing Student Records REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rollNumber\": \"SMIT001\",\n  \"firstName\": \"Sunita\",\n  \"lastName\": \"Maity\",\n  \"email\": \"sunita.maity.it@example.com\",\n  \"department\": \"Information Technology\",\n  \"year\": 3,\n  \"gpa\": 8.71\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}",
+          "host": [
+            "{{baseUrl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}",
+          "host": [
+            "{{baseUrl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rollNumber\": \"SMIT001\",\n  \"firstName\": \"Sunita\",\n  \"lastName\": \"Maity\",\n  \"email\": \"sunita.maity.it@example.com\",\n  \"department\": \"Information Technology\",\n  \"year\": 3,\n  \"gpa\": 9.0\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalid Student - Missing Email",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rollNumber\": \"SMIT002\",\n  \"firstName\": \"Ananya\",\n  \"lastName\": \"Sharma\",\n  \"department\": \"Information Technology\",\n  \"year\": 2,\n  \"gpa\": 8.71\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}",
+          "host": [
+            "{{baseUrl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Non Existing Student",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/9999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "9999"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/students"
+    }
+  ]
+}
